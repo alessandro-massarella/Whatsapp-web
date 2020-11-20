@@ -21,6 +21,24 @@ body {
   /* background-color: lightgreen; */
   /* border: 1px solid black; */
 }
+
+.styleIcon {
+  font-size: 25px;
+  color: grey;
+  /* margin-left: 10px; */
+  margin-right: 10px;
+}
+.fa {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.flexIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* MAIN LEFT-------------*/
   #main_left {
     width: 40%;
@@ -33,7 +51,7 @@ body {
     height: 10%;
     min-height: 50px;
     background-color: #ebebeb;
-    border-right: 1px solid grey;
+    border-right: 1px solid lightgrey;
   }
   #notify {
     height: 10%;
@@ -88,8 +106,10 @@ body {
   right: 0;
   height: 10%;
   background-color: #ebebeb;
+  border-left: 1px solid lightgrey;
+
 }
-#inputChat > input {
+#inputChat div input {
   width: 80%;
   height: 40px;
   border-radius: 5px;
@@ -98,4 +118,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#inputChat i {
+  font-size: 25px;
+  padding: 20px;
+  color: grey;
 }
