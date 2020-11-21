@@ -22,7 +22,7 @@
               <img :src="user.avatar" alt="">
             </div>
             <p>{{ user.nameUser }}</p>
-
+<button @click ="openChat" type="button" name="button">PROVA</button>
             <div class="icon styleIcon">
               <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
               <i class="fa fa-whatsapp" aria-hidden="true"></i>
@@ -46,10 +46,10 @@
             <ol>
               <li class="contact"
                   v-for ="(contact, index) in contactList"
-                  @click ="">
+                  @click ="openChat">
                     <img :src="contact.avatar" alt="">
                     <div>
-                      <span>{{contact.nameContact}}</span>
+                      <span>{{contactList[index].nameContact}}</span>
                     </div>
               </li>
 
@@ -62,7 +62,8 @@
             <div class="contact">
               <img :src="contactList.avatar" alt="">
             </div>
-            <p>{{ contactList.nameContact }}</p>
+            <p>{{ userChat }}</p>
+
 
             <div class="icon styleIcon">
               <i class="fa fa-search" aria-hidden="true"></i>
