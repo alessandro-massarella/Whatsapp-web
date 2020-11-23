@@ -86,20 +86,23 @@ body {
       color: #a1dafb;
     }
   #search {
-    position: relative;
+    /* position: relative; */
     height: 10%;
     min-height: 50px;
     background-color: #fafafa;
+
+    display: flex;
+    align-items: center;
   }
     #search > input {
       width: 90%;
       height: 40px;
       border-radius: 5px;
       border: 1px solid lightgrey;
-      position: absolute;
+      /* position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); */
     }
   #contacts {
     height: 69%;
@@ -119,7 +122,6 @@ body {
   } */
   #contacts ol li {
     display: flex;
-    flex: 0 0 0;
     align-items: center;
     justify-content: flex-start;
     border-bottom: 1px solid #ebebeb;
@@ -167,11 +169,21 @@ body {
   min-height: 50px;
   min-width: 540px;
   background-color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 #header_right img {
   width: 40px;
   border-radius: 50%;
   margin: 10px;
+  display: inline-block;
+}
+#header_right .contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
 }
 
 #chat {

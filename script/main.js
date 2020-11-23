@@ -12,42 +12,89 @@ const boolzapp = new Vue ({
       {
         avatar: 'img/avatar_1.jpg',
         nameContact: 'Michele',
-        ultimoAccesso: 'Ultimo accesso:'
+        ultimoAccesso: 'Ultimo accesso:',
+        messaggi: {
+          testo:'',
+          data:'',
+          trasmesso: true/false
+        }
       },
       {
         avatar: 'img/avatar_2.jpg',
         nameContact: 'Fabio',
-        ultimoAccesso: 'Ultimo accesso:'
+        ultimoAccesso: 'Ultimo accesso:',
+        messaggi: {
+          testo:'',
+          data:'',
+          trasmesso: true/false
+        }
+
       },
       {
         avatar: 'img/avatar_3.jpg',
         nameContact: 'Samuele',
-        ultimoAccesso: 'Ultimo accesso:'
+        ultimoAccesso: 'Ultimo accesso:',
+        messaggi: {
+          testo:'',
+          data:'',
+          trasmesso: true/false
+        }
+
       },
       {
         avatar: 'img/avatar_4.jpg',
         nameContact: 'Luca',
-        ultimoAccesso: 'Ultimo accesso:'
+        ultimoAccesso: 'Ultimo accesso:',
+        messaggi: {
+          testo:'',
+          data:'',
+          trasmesso: true/false
+        }
+
       },
       {
         avatar: 'img/avatar_5.jpg',
         nameContact: 'Simone',
-        ultimoAccesso: 'Ultimo accesso:'
+        ultimoAccesso: 'Ultimo accesso:',
+        messaggi: {
+          testo:'',
+          data:'',
+          trasmesso: true/false
+        }
+
       },
       {
         avatar: 'img/avatar_6.jpg',
         nameContact: 'Diego',
-        ultimoAccesso: 'Ultimo accesso:'
+        ultimoAccesso: 'Ultimo accesso:',
+        messaggi: {
+          testo:'',
+          data:'',
+          trasmesso: true/false
+        }
+
       },
       {
         avatar: 'img/avatar_7.jpg',
         nameContact: 'Cristiano',
-        ultimoAccesso: 'Ultimo accesso:'
+        ultimoAccesso: 'Ultimo accesso:',
+        messaggi: {
+          testo:'',
+          data:'',
+          trasmesso: true/false
+        }
+
       },
       {
         avatar: 'img/avatar_8.jpg',
         nameContact: 'Paul',
-        ultimoAccesso: 'Ultimo accesso:'
+        ultimoAccesso: 'Ultimo accesso:',
+        messaggi: {
+          testo:'',
+          data:'',
+          trasmesso: true/false
+        }
+
       },
     ],
 
@@ -59,8 +106,6 @@ const boolzapp = new Vue ({
     openChat: function(index) {
       this.userChatIndex= index;
       // this.isActive= true;
-
-
     }
   }
 })

@@ -38,13 +38,17 @@
 
           </div>
           <div id="search" class="inputSearch">
+            <label><i class="fa fa-search" aria-hidden="true"></i>
+</label>
             <input type="text" name="" value="" placeholder=" Cerca o inizia una nuova chat">
           </div>
           <div id="contacts">
             <ol>
-              <li class="contact"
+              <li
+                  class="contact"
                   v-for ="(contact, index) in contactList"
-                  @click ="openChat(index)">
+                  @click ="openChat(index)"
+                  :class = "{active: index == userChatIndex}">
                     <img :src="contact.avatar" alt="">
                     <div>
                       <span>{{contactList[index].nameContact}}</span>
@@ -56,11 +60,14 @@
         </div>
         <!-- main destra -->
         <div id="main_right">
-          <div id="header_right" class="flexIcon">
+          <div id="header_right">
             <div class="contact">
               <img :src="contactList[userChatIndex].avatar" alt="">
+              <div class="">
+                <p>{{ contactList[userChatIndex].nameContact }}</p>
+                <p>ultimo accesso:</p>
+              </div>
             </div>
-            <p>{{ contactList[userChatIndex].nameContact }}</p>
             <div class="icon styleIcon">
               <i class="fa fa-search" aria-hidden="true"></i>
               <i class="fa fa-paperclip" aria-hidden="true"></i>
@@ -68,6 +75,8 @@
             </div>
           </div>
           <div id="chat">
+
+
           </div>
           <div id="inputChat" class="flexIcon">
             <i class="fa fa-smile-o" aria-hidden="true"></i>
