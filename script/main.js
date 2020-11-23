@@ -50,11 +50,13 @@ const boolzapp = new Vue ({
         ultimoAccesso: 'Ultimo accesso:'
       },
     ],
-    userChat: 'ciao'
+
+    userChatIndex: 0
   },
+
   methods: {
-    openChat: function () {
-      this.userChat= this.contactList.contact
+    openChat: function(index) {
+      this.userChatIndex= index;
     }
   }
 })

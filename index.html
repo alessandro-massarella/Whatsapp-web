@@ -12,9 +12,8 @@
     <script src="script/vue.js" charset="utf-8"></script>
   </head>
   <body>
-    <div id="root">
       <!-- la struttura più esterna -->
-      <div class="container">
+      <div class="container" id="root">
         <!-- main sinistra -->
         <div id="main_left">
           <div id="header_left" class="flexIcon">
@@ -22,8 +21,7 @@
               <img :src="user.avatar" alt="">
             </div>
             <p>{{ user.nameUser }}</p>
-<button @click ="openChat" type="button" name="button">PROVA</button>
-            <div class="icon styleIcon">
+            <div class="icon styleIcon flexIcon">
               <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
               <i class="fa fa-whatsapp" aria-hidden="true"></i>
               <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -46,7 +44,9 @@
             <ol>
               <li class="contact"
                   v-for ="(contact, index) in contactList"
-                  @click ="openChat">
+                  @click ="openChat(index)"
+
+                  >
                     <img :src="contact.avatar" alt="">
                     <div>
                       <span>{{contactList[index].nameContact}}</span>
@@ -60,11 +60,9 @@
         <div id="main_right">
           <div id="header_right" class="flexIcon">
             <div class="contact">
-              <img :src="contactList.avatar" alt="">
+              <img :src="contactList[userChatIndex].avatar" alt="">
             </div>
-            <p>{{ userChat }}</p>
-
-
+            <p>{{ contactList[userChatIndex].nameContact }}</p>
             <div class="icon styleIcon">
               <i class="fa fa-search" aria-hidden="true"></i>
               <i class="fa fa-paperclip" aria-hidden="true"></i>
@@ -82,9 +80,7 @@
           </div>
 
         </div>
-
       </div>
-    </div>
 
 
 
