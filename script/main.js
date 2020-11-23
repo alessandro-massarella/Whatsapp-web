@@ -13,99 +13,132 @@ const boolzapp = new Vue ({
         avatar: 'img/avatar_1.jpg',
         nameContact: 'Michele',
         ultimoAccesso: 'Ultimo accesso:',
-        messaggi: {
-          testo:'',
+        messaggio: [
+          {
+          testo:'Ciao, quando suonerai in quel locale?',
           data:'',
-          trasmesso: true/false
-        }
+          trasmesso: true
+          },
+          {
+          testo:'Non so, forse questa primavera.',
+          data:'',
+          trasmesso: false
+          }
+        ]
       },
       {
         avatar: 'img/avatar_2.jpg',
         nameContact: 'Fabio',
         ultimoAccesso: 'Ultimo accesso:',
-        messaggi: {
-          testo:'',
+        messaggio: [
+          {
+          testo:'AJJDASDJASJDADJASJ',
           data:'',
-          trasmesso: true/false
-        }
+          trasmesso: false
+          },
+          {
+          testo:'AWEQEQfsdsfsadaaASJ',
+          data:'',
+          trasmesso: true
+          }
+        ]
 
       },
       {
         avatar: 'img/avatar_3.jpg',
         nameContact: 'Samuele',
         ultimoAccesso: 'Ultimo accesso:',
-        messaggi: {
+        messaggio: [
+          {
           testo:'',
           data:'',
           trasmesso: true/false
-        }
+          }
+        ]
 
       },
       {
         avatar: 'img/avatar_4.jpg',
         nameContact: 'Luca',
         ultimoAccesso: 'Ultimo accesso:',
-        messaggi: {
+        messaggio: [
+        {
           testo:'',
           data:'',
           trasmesso: true/false
-        }
+         }
+       ]
 
       },
       {
         avatar: 'img/avatar_5.jpg',
         nameContact: 'Simone',
         ultimoAccesso: 'Ultimo accesso:',
-        messaggi: {
+        messaggio: [
+          {
           testo:'',
           data:'',
           trasmesso: true/false
-        }
+          }
+        ]
 
       },
       {
         avatar: 'img/avatar_6.jpg',
         nameContact: 'Diego',
         ultimoAccesso: 'Ultimo accesso:',
-        messaggi: {
+        messaggio: [
+          {
           testo:'',
           data:'',
           trasmesso: true/false
-        }
+          }
+        ]
 
       },
       {
         avatar: 'img/avatar_7.jpg',
         nameContact: 'Cristiano',
         ultimoAccesso: 'Ultimo accesso:',
-        messaggi: {
+        messaggio: [
+          {
           testo:'',
           data:'',
           trasmesso: true/false
-        }
+          }
+        ]
 
       },
       {
         avatar: 'img/avatar_8.jpg',
         nameContact: 'Paul',
         ultimoAccesso: 'Ultimo accesso:',
-        messaggi: {
+        messaggio: [
+          {
           testo:'',
           data:'',
           trasmesso: true/false
-        }
+          }
+        ]
 
       },
     ],
 
-    userChatIndex: 0
+    userChatIndex: 0,
     // isActive: false,
+    testoChat: [],
+    isTransmit: false,
+
   },
 
   methods: {
     openChat: function(index) {
       this.userChatIndex= index;
-      // this.isActive= true;
+
+       this.contactList[this.userChatIndex].messaggio.forEach(element =>
+        this.testoChat.push(element.testo))
+       this.contactList[this.userChatIndex].messaggio.forEach(element =>
+        this.isTransmit= (element.trasmesso))
     }
   }
 })

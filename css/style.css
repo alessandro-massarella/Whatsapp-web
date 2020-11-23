@@ -192,6 +192,10 @@ body {
   height: 80%;
   min-width: 540px;
   min-height: 300px;
+  overflow-y: auto;
+
+  /* display: flex; */
+
 }
 #inputChat {
   position: relative;
@@ -219,4 +223,32 @@ body {
   font-size: 25px;
   padding: 20px;
   color: grey;
+}
+
+/* .leftChat,
+.rightChat {
+  width: 50%;
+  height: 100%;
+} */
+.greenBalloon {
+  width: 60%;
+  height: 100px;
+  max-width: 350px;
+  max-height: 100px;
+  border-radius: 10px;
+  background-color: #ddf9bc;
+
+  margin-left: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+.whiteBalloon {
+  width: 60%;
+  height: 100px;
+  max-width: 350px;
+  max-height: 100px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 50px;
 }
