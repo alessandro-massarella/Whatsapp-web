@@ -13,7 +13,11 @@ body {
 
   overflow: hidden;
   height: 750px;
+}
 
+/* cambia il colore quando selezionato */
+.active {
+  background-color: #eaecec;
 
 }
 
@@ -119,6 +123,11 @@ body {
     align-items: center;
     justify-content: flex-start;
     border-bottom: 1px solid #ebebeb;
+  }
+
+  #contacts ol li:active,
+  #contacts ol li:hover {
+    background-color: #eaecec;
   }
   #contacts ol li img {
     width: 60px;

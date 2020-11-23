@@ -52,11 +52,15 @@ const boolzapp = new Vue ({
     ],
 
     userChatIndex: 0
+    // isActive: false,
   },
 
   methods: {
     openChat: function(index) {
       this.userChatIndex= index;
+      // this.isActive= true;
+
+
     }
   }
 })

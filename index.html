@@ -44,9 +44,7 @@
             <ol>
               <li class="contact"
                   v-for ="(contact, index) in contactList"
-                  @click ="openChat(index)"
-
-                  >
+                  @click ="openChat(index)">
                     <img :src="contact.avatar" alt="">
                     <div>
                       <span>{{contactList[index].nameContact}}</span>
