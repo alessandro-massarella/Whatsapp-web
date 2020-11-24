@@ -147,7 +147,7 @@ const boolzapp = new Vue ({
       // setTimeout(nomeFunzione, tempo da aspettare);
       setTimeout(()=>{
       this.contactList[this.userChatIndex].messaggio.push({"testo": this.messaggioCPU, "stato": "ricevuto", "data": "24/11/2020 12:00"})
-    },3000);
+      },3000);
 
 
 
