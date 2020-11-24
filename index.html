@@ -87,7 +87,9 @@
           <div id="inputChat" class="flexIcon">
             <i class="fa fa-smile-o" aria-hidden="true"></i>
             <div>
-              <input type="text" name="" value="" placeholder=" Scrivi un messaggio">
+              <input type="text" name="" value="" placeholder=" Scrivi un messaggio"
+              v-model="messaggioInput"
+              v-on:keyup.enter="submit">
             </div>
             <i class="fa fa-microphone" aria-hidden="true"></i>
           </div>

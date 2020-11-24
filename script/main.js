@@ -128,15 +128,31 @@ const boolzapp = new Vue ({
     ],
 
     userChatIndex: 0,
-    // isActive: false,
-    testoChat: [],
-    isTransmit: false,
+    messaggioInput:'',
+    messaggioCPU: 'Perfetto'
 
   },
 
   methods: {
     openChat: function(index) {
       this.userChatIndex= index;
+    },
+    submit: function() {
+      this.messaggioInput += '';
+      console.log(this.messaggioInput);
+      this.contactList[this.userChatIndex].messaggio.push({"testo": this.messaggioInput, "stato": "trasmesso", "data": "24/11/2020 12:00"});
+      console.log(this.contactList[this.userChatIndex].messaggio.testo);
+
+// messaggio trasmesso da computer
+      // setTimeout(nomeFunzione, tempo da aspettare);
+      setTimeout(()=>{
+      this.contactList[this.userChatIndex].messaggio.push({"testo": this.messaggioCPU, "stato": "ricevuto", "data": "24/11/2020 12:00"})
+    },3000);
+
+
+
+      this.messaggioInput ='';
+      console.log(this.messaggioInput);
 
     }
   }
