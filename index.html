@@ -76,13 +76,14 @@
           </div>
 <!-- CHAT- -->
           <div id="chat">
-            <div v-if = isTransmit class="whiteBalloon">
-              <p></p>
-            </div>
-            <div v-else class="greenBalloon">
-              <p></p>
+            <div class="message styleBallon"
+                  v-for="txtMessage in contactList[userChatIndex].messaggio"
+                  :class="{greenBalloon: txtMessage.stato==='trasmesso', whiteBalloon: txtMessage.stato==='ricevuto'}">
+              <p>{{ txtMessage.testo}}</p>
+              <p id="dataOra">{{ txtMessage.data }}</p>
             </div>
           </div>
+
           <div id="inputChat" class="flexIcon">
             <i class="fa fa-smile-o" aria-hidden="true"></i>
             <div>

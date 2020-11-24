@@ -127,10 +127,10 @@ body {
     border-bottom: 1px solid #ebebeb;
   }
 
-  #contacts ol li:active,
+  /* #contacts ol li:active,
   #contacts ol li:hover {
     background-color: #eaecec;
-  }
+  } */
   #contacts ol li img {
     width: 60px;
     border-radius: 50%;
@@ -230,6 +230,21 @@ body {
   width: 50%;
   height: 100%;
 } */
+.styleBallon {
+  position: relative;
+  padding: 10px;
+}
+
+.message #dataOra {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  color: darkgray;
+}
 .greenBalloon {
   width: 60%;
   height: 100px;
@@ -238,7 +253,7 @@ body {
   border-radius: 10px;
   background-color: #ddf9bc;
 
-  margin-left: 200px;
+  margin-left: 30%;
   margin-top: 50px;
   margin-bottom: 50px;
 

@@ -1,3 +1,6 @@
+const ricevuto= 'ricevuto'
+const trasmesso= 'trasmesso'
+
 const boolzapp = new Vue ({
   el: '#root',
   data: {
@@ -16,13 +19,13 @@ const boolzapp = new Vue ({
         messaggio: [
           {
           testo:'Ciao, quando suonerai in quel locale?',
-          data:'',
-          trasmesso: true
+          data:'24/11/2020 12:00',
+          stato: 'ricevuto'
           },
           {
           testo:'Non so, forse questa primavera.',
-          data:'',
-          trasmesso: false
+          data:'24/11/2020 12:05',
+          stato: 'trasmesso'
           }
         ]
       },
@@ -32,14 +35,14 @@ const boolzapp = new Vue ({
         ultimoAccesso: 'Ultimo accesso:',
         messaggio: [
           {
-          testo:'AJJDASDJASJDADJASJ',
-          data:'',
-          trasmesso: false
+          testo:'Ciao suonerò ad aprile',
+          data:'24/11/2020 12:06',
+          stato: 'trasmesso'
           },
           {
-          testo:'AWEQEQfsdsfsadaaASJ',
-          data:'',
-          trasmesso: true
+          testo:'Grazie, verrò sicuramente',
+          data:'24/11/2020 12:09',
+          stato: 'ricevuto'
           }
         ]
 
@@ -52,7 +55,7 @@ const boolzapp = new Vue ({
           {
           testo:'',
           data:'',
-          trasmesso: true/false
+          stato: true/false
           }
         ]
 
@@ -65,7 +68,7 @@ const boolzapp = new Vue ({
         {
           testo:'',
           data:'',
-          trasmesso: true/false
+          stato: true/false
          }
        ]
 
@@ -78,7 +81,7 @@ const boolzapp = new Vue ({
           {
           testo:'',
           data:'',
-          trasmesso: true/false
+          stato: true/false
           }
         ]
 
@@ -91,7 +94,7 @@ const boolzapp = new Vue ({
           {
           testo:'',
           data:'',
-          trasmesso: true/false
+          stato: true/false
           }
         ]
 
@@ -104,7 +107,7 @@ const boolzapp = new Vue ({
           {
           testo:'',
           data:'',
-          trasmesso: true/false
+          stato: true/false
           }
         ]
 
@@ -117,7 +120,7 @@ const boolzapp = new Vue ({
           {
           testo:'',
           data:'',
-          trasmesso: true/false
+          stato: true/false
           }
         ]
 
@@ -135,10 +138,6 @@ const boolzapp = new Vue ({
     openChat: function(index) {
       this.userChatIndex= index;
 
-       this.contactList[this.userChatIndex].messaggio.forEach(element =>
-        this.testoChat.push(element.testo))
-       this.contactList[this.userChatIndex].messaggio.forEach(element =>
-        this.isTransmit= (element.trasmesso))
     }
   }
 })
