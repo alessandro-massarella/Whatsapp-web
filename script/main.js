@@ -126,7 +126,10 @@ const boolzapp = new Vue ({
 
       },
     ],
-
+    // CONTATTI FILTRATI:
+    filteredContactList: [],
+    // per la ricerca del contatto:
+    searchText:'',
     userChatIndex: 0,
     messaggioInput:'',
     messaggioCPU: 'Perfetto'
@@ -148,12 +151,14 @@ const boolzapp = new Vue ({
       setTimeout(()=>{
       this.contactList[this.userChatIndex].messaggio.push({"testo": this.messaggioCPU, "stato": "ricevuto", "data": "24/11/2020 12:00"})
       },3000);
-
-
-
       this.messaggioInput ='';
       console.log(this.messaggioInput);
+    },
 
+    filterContacts: function() {
+
+      this.filteredContactList = this.contactList.filter( (contact) => contact.name.includes(this.searchText) )
     }
-  }
+  },
+
 })

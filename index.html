@@ -38,23 +38,35 @@
 
           </div>
           <div id="search" class="inputSearch">
-            <label><i class="fa fa-search" aria-hidden="true"></i>
-</label>
-            <input type="text" name="" value="" placeholder=" Cerca o inizia una nuova chat">
+            <label><i class="fa fa-search" aria-hidden="true"></i></label>
+            <input v-model="searchText" type="text" name="" value="" placeholder=" Cerca o inizia una nuova chat" v-on:keyup="filterContacts">
           </div>
           <div id="contacts">
             <ol>
-              <li
-                  class="contact"
-                  v-for ="(contact, index) in contactList"
-                  @click ="openChat(index)"
-                  :class = "{active: index == userChatIndex}">
-                    <img :src="contact.avatar" alt="">
-                    <div>
-                      <span>{{contactList[index].nameContact}}</span>
-                    </div>
-              </li>
-
+              <template>
+                <li
+                    class="contact"
+                    v-for ="(contact, index) in contactList"
+                    @click ="openChat(index)"
+                    :class = "{active: index == userChatIndex}">
+                      <img :src="contact.avatar" alt="">
+                      <div>
+                        <span>{{contactList[index].nameContact}}</span>
+                      </div>
+                </li>
+              </template>
+              <template>
+                <li
+                    class="contact"
+                    v-for ="(contact, index) in filteredContactList"
+                    @click ="openChat(index)"
+                    :class = "{active: index == userChatIndex}">
+                      <img :src="contact.avatar" alt="">
+                      <div>
+                        <span>{{contactList[index].nameContact}}</span>
+                      </div>
+                </li>
+              </template>
             </ol>
           </div>
         </div>
