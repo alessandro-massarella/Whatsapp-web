@@ -73,58 +73,58 @@ const boolzapp = new Vue ({
        ]
 
       },
-      {
-        avatar: 'img/avatar_5.jpg',
-        nameContact: 'Simone',
-        ultimoAccesso: 'Ultimo accesso:',
-        messaggio: [
-          {
-          testo:'',
-          data:'',
-          stato: true/false
-          }
-        ]
-
-      },
-      {
-        avatar: 'img/avatar_6.jpg',
-        nameContact: 'Diego',
-        ultimoAccesso: 'Ultimo accesso:',
-        messaggio: [
-          {
-          testo:'',
-          data:'',
-          stato: true/false
-          }
-        ]
-
-      },
-      {
-        avatar: 'img/avatar_7.jpg',
-        nameContact: 'Cristiano',
-        ultimoAccesso: 'Ultimo accesso:',
-        messaggio: [
-          {
-          testo:'',
-          data:'',
-          stato: true/false
-          }
-        ]
-
-      },
-      {
-        avatar: 'img/avatar_8.jpg',
-        nameContact: 'Paul',
-        ultimoAccesso: 'Ultimo accesso:',
-        messaggio: [
-          {
-          testo:'',
-          data:'',
-          stato: true/false
-          }
-        ]
-
-      },
+      // {
+      //   avatar: 'img/avatar_5.jpg',
+      //   nameContact: 'Simone',
+      //   ultimoAccesso: 'Ultimo accesso:',
+      //   messaggio: [
+      //     {
+      //     testo:'',
+      //     data:'',
+      //     stato: true/false
+      //     }
+      //   ]
+      //
+      // },
+      // {
+      //   avatar: 'img/avatar_6.jpg',
+      //   nameContact: 'Diego',
+      //   ultimoAccesso: 'Ultimo accesso:',
+      //   messaggio: [
+      //     {
+      //     testo:'',
+      //     data:'',
+      //     stato: true/false
+      //     }
+      //   ]
+      //
+      // },
+      // {
+      //   avatar: 'img/avatar_7.jpg',
+      //   nameContact: 'Cristiano',
+      //   ultimoAccesso: 'Ultimo accesso:',
+      //   messaggio: [
+      //     {
+      //     testo:'',
+      //     data:'',
+      //     stato: true/false
+      //     }
+      //   ]
+      //
+      // },
+      // {
+      //   avatar: 'img/avatar_8.jpg',
+      //   nameContact: 'Paul',
+      //   ultimoAccesso: 'Ultimo accesso:',
+      //   messaggio: [
+      //     {
+      //     testo:'',
+      //     data:'',
+      //     stato: true/false
+      //     }
+      //   ]
+      //
+      // },
     ],
     // CONTATTI FILTRATI:
     filteredContactList: [],
@@ -156,8 +156,7 @@ const boolzapp = new Vue ({
     },
 
     filterContacts: function() {
-
-      this.filteredContactList = this.contactList.filter( (contact) => contact.name.includes(this.searchText) )
+      this.filteredContactList = this.contactList.filter( (contact) => contact.nameContact.toLowerCase().includes(this.searchText) )
     }
   },
 

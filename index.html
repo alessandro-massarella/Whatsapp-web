@@ -43,22 +43,23 @@
           </div>
           <div id="contacts">
             <ol>
-              <template>
+              <template v-if="searchText.length > 0">
                 <li
                     class="contact"
-                    v-for ="(contact, index) in contactList"
+                    v-for ="(contact, index) in filteredContactList"
                     @click ="openChat(index)"
                     :class = "{active: index == userChatIndex}">
                       <img :src="contact.avatar" alt="">
                       <div>
-                        <span>{{contactList[index].nameContact}}</span>
+                        <span>{{filteredContactList[index].nameContact}}</span>
                       </div>
                 </li>
               </template>
-              <template>
+
+              <template v-else>
                 <li
                     class="contact"
-                    v-for ="(contact, index) in filteredContactList"
+                    v-for ="(contact, index) in contactList"
                     @click ="openChat(index)"
                     :class = "{active: index == userChatIndex}">
                       <img :src="contact.avatar" alt="">
