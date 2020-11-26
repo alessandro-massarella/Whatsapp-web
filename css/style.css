@@ -18,8 +18,8 @@ body {
 /* cambia il colore quando selezionato */
 .active {
   background-color: #eaecec;
-
 }
+
 
 .container {
   display: flex;
@@ -193,7 +193,7 @@ body {
   min-width: 540px;
   min-height: 300px;
   overflow-y: auto;
-  
+
 
   /* display: flex; */
 

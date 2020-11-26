@@ -13,6 +13,7 @@ const boolzapp = new Vue ({
     contactList: [
       // singolo contatto (oggetto):
       {
+        id: 1,
         avatar: 'img/avatar_1.jpg',
         nameContact: 'Michele',
         ultimoAccesso: 'Ultimo accesso:',
@@ -30,6 +31,7 @@ const boolzapp = new Vue ({
         ]
       },
       {
+        id: 2,
         avatar: 'img/avatar_2.jpg',
         nameContact: 'Fabio',
         ultimoAccesso: 'Ultimo accesso:',
@@ -48,27 +50,29 @@ const boolzapp = new Vue ({
 
       },
       {
+        id: 3,
         avatar: 'img/avatar_3.jpg',
         nameContact: 'Samuele',
         ultimoAccesso: 'Ultimo accesso:',
         messaggio: [
           {
-          testo:'',
+          testo:'Buona fortuna',
           data:'',
-          stato: true/false
+          stato: 'ricevuto'
           }
         ]
 
       },
       {
+        id: 4,
         avatar: 'img/avatar_4.jpg',
         nameContact: 'Luca',
         ultimoAccesso: 'Ultimo accesso:',
         messaggio: [
         {
-          testo:'',
+          testo:'Ciao',
           data:'',
-          stato: true/false
+          stato: 'trasmesso'
          }
        ]
 
@@ -132,7 +136,11 @@ const boolzapp = new Vue ({
     searchText:'',
     userChatIndex: 0,
     messaggioInput:'',
-    messaggioCPU: 'Perfetto'
+    messaggioCPU: 'Perfetto',
+    oldChatIndex: 0,
+
+    // per l'attivazione della classe sugli elementi filtrati:
+    indexId: 0,
 
   },
 
@@ -140,6 +148,7 @@ const boolzapp = new Vue ({
     openChat: function(index) {
       this.userChatIndex= index;
     },
+
     submit: function() {
       this.messaggioInput += '';
       console.log(this.messaggioInput);
@@ -147,9 +156,12 @@ const boolzapp = new Vue ({
       console.log(this.contactList[this.userChatIndex].messaggio.testo);
 
 // messaggio trasmesso da computer
+      // salvo lo stato dell'indice in oldChatIndex, in modo da non permettergli di cambiare se seleziono un altro utente prima di aver ricevuto la risposta
+      this.oldChatIndex = this.userChatIndex;
+
       // setTimeout(nomeFunzione, tempo da aspettare);
       setTimeout(()=>{
-      this.contactList[this.userChatIndex].messaggio.push({"testo": this.messaggioCPU, "stato": "ricevuto", "data": "24/11/2020 12:00"})
+      this.contactList[this.oldChatIndex].messaggio.push({"testo": this.messaggioCPU, "stato": "ricevuto", "data": "24/11/2020 12:00"})
       },3000);
       this.messaggioInput ='';
       console.log(this.messaggioInput);
@@ -157,7 +169,12 @@ const boolzapp = new Vue ({
 
     filterContacts: function() {
       this.filteredContactList = this.contactList.filter( (contact) => contact.nameContact.toLowerCase().includes(this.searchText) )
-    }
+    },
+
+    updateIndex: function(id) {
+      this.userChatIndex = this.contactList.findIndex( e => id === e.id)
+    },
+
   },
 
 })
