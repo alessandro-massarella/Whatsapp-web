@@ -47,8 +47,8 @@
                 <li
                     class="contact"
                     v-for ="(contact, index) in filteredContactList"
-                    @click ="openChat(index); updateIndex(contact.id)"
-                    >
+                    @click ="updateIndex(contact.id)"
+                    :class = "">
                       <img :src="contact.avatar" alt="">
                       <div>
                         <span>{{filteredContactList[index].nameContact}}</span>
